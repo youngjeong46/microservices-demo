@@ -11,18 +11,8 @@ Online Boutique consists of a 10-tier microservices application. The application
 web-based e-commerce app where users can browse items,
 add them to the cart, and purchase them.
 
-**Google uses this application to demonstrate use of technologies like
-Kubernetes/GKE, Istio, Stackdriver, gRPC and OpenCensus**. This application
-works on any Kubernetes cluster, as well as Google
-Kubernetes Engine. It’s **easy to deploy with little to no configuration**.
-
-If you’re using this demo, please **★Star** this repository to show your interest!
-
-> 👓**Note to Googlers:** Please fill out the form at
-> [go/microservices-demo](http://go/microservices-demo) if you are using this
-> application.
-
-Looking for the old Hipster Shop frontend interface? Use the [manifests](https://github.com/GoogleCloudPlatform/microservices-demo/tree/v0.1.5/kubernetes-manifests) in release [v0.1.5](https://github.com/GoogleCloudPlatform/microservices-demo/releases/v0.1.5).
+> **THIS IS A FORKED VERSION TO ADAPT TO AMAZON EKS. PLEASE SEE [here](https://github.com/GoogleCloudPlatform/microservices-demo) for the 
+> original repo.**
 
 ## Screenshots
 
@@ -40,7 +30,9 @@ cd microservices-demo
 ```
 2. Set your environment variables:
 ```bash
-
+export CLUSTER_NAME=<name of your cluster>
+export AWS_REGION=<AWS Region of your choice>
+export AWS_ACCOUNT_ID=<AWS Account ID>
 ```
 3. Run the shell script
 
