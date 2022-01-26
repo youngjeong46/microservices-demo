@@ -71,4 +71,4 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller 
 
-k apply -f kubernetes-manifests/
+kubectl apply -f kubernetes-manifests/
