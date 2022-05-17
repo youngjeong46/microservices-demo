@@ -113,6 +113,6 @@ spec:
   selector:
     app: frontend
   ports:
-  - name: TCP
+  - name: tcp
     port: 80
     targetPort: 8080
