@@ -18,6 +18,7 @@ metadata:
   name: frontend
 spec:
   selector:
+    replicas: 2
     matchLabels:
       app: frontend
   template:
