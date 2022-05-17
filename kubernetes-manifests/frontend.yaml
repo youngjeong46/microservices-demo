@@ -105,7 +105,6 @@ kind: Service
 metadata:
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '60'
-    service.beta.kubernetes.io/aws-load-balancer-type: nlb 
     external-dns.alpha.kubernetes.io/hostname: youngsjeong.com
   name: frontend-external
 spec:
