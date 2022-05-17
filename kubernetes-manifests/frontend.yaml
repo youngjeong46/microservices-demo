@@ -103,7 +103,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations: 
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '60'
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb 
     external-dns.alpha.kubernetes.io/hostname: youngsjeong.com
   name: frontend-external
 spec:
@@ -111,6 +113,6 @@ spec:
   selector:
     app: frontend
   ports:
-  - name: http
+  - name: TCP
     port: 80
     targetPort: 8080
