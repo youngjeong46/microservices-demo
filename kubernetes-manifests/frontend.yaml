@@ -99,19 +99,19 @@ spec:
   - name: http
     port: 80
     targetPort: 8080
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  annotations:
-    kubernetes.io/ingress.class: 'nginx'
-  name: frontend-ingress
-spec:
-  rules:
-  - host: boutique.dev.youngsjeong.com
-    http:
-      paths:
-      - backend:
-          serviceName: frontend
-          servicePort: 80
-        path: /
+# ---
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   annotations:
+#     kubernetes.io/ingress.class: 'nginx'
+#   name: frontend-ingress
+# spec:
+#   rules:
+#   - host: boutique.dev.youngsjeong.com
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: frontend
+#           servicePort: 80
+#         path: /
