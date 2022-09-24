@@ -124,10 +124,10 @@ metadata:
   name: frontend-ingress
 spec:
   rules:
-  - host: boutique.youngsjeong.com
+  - host: '*.youngsjeong.com'
     http:
       paths:
       - backend:
           serviceName: frontend
           servicePort: 80
-        path: /
+        path: /boutique
