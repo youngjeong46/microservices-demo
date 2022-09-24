@@ -124,6 +124,9 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
   name: frontend-ingress
 spec:
+  tls:
+    - hosts:
+      - boutique.prod.youngsjeong.com
   rules:
   - host: boutique.prod.youngsjeong.com
     http:
