@@ -106,16 +106,19 @@ metadata:
   annotations:
     external-dns.alpha.kubernetes.io/hostname: boutique.cm.youngj.people.aws.dev
     alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/healthcheck-path: /_healthz
   name: frontend-ingress
 spec:
+  ingressClassName: alb
   rules:
   - host: boutique.cm.youngj.people.aws.dev
     http:
       paths:
-      - backend:
+      - path: /
+        pathType: Exact
+        backend:
           service:
             name: frontend
             port: 
               number: 80
-        path: /
-        pathType: Prefix
