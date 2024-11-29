@@ -115,20 +115,20 @@ spec:
 #   - name: tcp
 #     port: 80
 #     targetPort: 8080
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
-  name: frontend-ingress
-spec:
-  rules:
-  - host: boutique.prod.youngsjeong.com
-    http:
-      paths:
-      - backend:
-          serviceName: frontend
-          servicePort: 80
-        path: /
+# ---
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   annotations:
+#     kubernetes.io/ingress.class: nginx
+#     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+#   name: frontend-ingress
+# spec:
+#   rules:
+#   - host: boutique.prod.youngsjeong.com
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: frontend
+#           servicePort: 80
+#         path: /
