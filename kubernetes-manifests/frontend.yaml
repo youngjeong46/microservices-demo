@@ -120,3 +120,4 @@ spec:
           serviceName: frontend
           servicePort: 80
         path: /
+        pathType: Prefix
