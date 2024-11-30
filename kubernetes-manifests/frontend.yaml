@@ -106,7 +106,6 @@ metadata:
   annotations:
     external-dns.alpha.kubernetes.io/hostname: boutique.r53.youngj.people.aws.dev
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/healthcheck-path: /_healthz
   name: frontend-ingress
 spec:
