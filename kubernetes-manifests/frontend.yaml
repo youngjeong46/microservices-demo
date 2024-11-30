@@ -110,7 +110,8 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - http:
+  - host: boutique.r53.youngj.people.aws.dev
+    http:
       paths:
       - path: /
         pathType: Prefix
