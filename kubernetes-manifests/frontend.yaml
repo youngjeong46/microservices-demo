@@ -104,9 +104,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: boutique.r53.youngj.people.aws.dev
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/healthcheck-path: /_healthz
+    external-dns.alpha.kubernetes.io/hostname: boutique.r53.youngj.people.aws.dev
   name: frontend-ingress
 spec:
   ingressClassName: alb
