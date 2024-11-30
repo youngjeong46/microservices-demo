@@ -96,9 +96,10 @@ spec:
   selector:
     app: frontend
   ports:
-  - name: http
+  - name: tcp
     port: 80
     targetPort: 8080
+    protocol: tcp
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -107,6 +108,7 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: boutique.cm.youngj.people.aws.dev
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/healthcheck-path: /_healthz
   name: frontend-ingress
 spec:
   ingressClassName: alb
