@@ -99,23 +99,27 @@ spec:
   - name: http
     port: 80
     targetPort: 8080
-# ---
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   annotations:
-#     alb.ingress.kubernetes.io/scheme: internet-facing
-#     external-dns.alpha.kubernetes.io/hostname: boutique.r53.youngj.people.aws.dev
-#   name: frontend-ingress
-# spec:
-#   ingressClassName: alb
-#   rules:
-#   - http:
-#       paths:
-#       - path: /
-#         pathType: Prefix
-#         backend:
-#           service:
-#             name: frontend-service
-#             port: 
-#               number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:181460066119:certificate/be7bcc39-fcd7-47b4-94bb-096187925061
+    external-dns.alpha.kubernetes.io/hostname: boutique.r53.youngj.people.aws.dev
+  name: frontend-ingress
+spec:
+  ingressClassName: alb
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-service
+            port: 
+              number: 80
